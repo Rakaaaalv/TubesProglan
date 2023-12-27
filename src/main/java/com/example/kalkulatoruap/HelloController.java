@@ -186,7 +186,7 @@ public class HelloController implements Initializable {
         if (history.isEmpty()) {
             // Tampilkan pesan jika history belum ada
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Calculation History");
+            alert.setTitle("History Kalkulator");
             alert.setHeaderText(null);
             alert.setContentText("History belum ada.");
             alert.showAndWait();
@@ -199,7 +199,7 @@ public class HelloController implements Initializable {
 
             // Tampilkan history dengan menggunakan Alert
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Calculation History");
+            alert.setTitle("History Kalkulator");
             alert.setHeaderText(null);
             alert.setContentText(historyText.toString());
             alert.showAndWait();
