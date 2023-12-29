@@ -117,6 +117,17 @@ public class HelloController implements Initializable {
         Button button = (Button) event.getSource();
         String value = button.getText();
 
+        // Cek inputan kosong
+        if (result.getText().isEmpty() || prevnum.getText().endsWith(" ")) {
+            // Tampilkan Alert inputan kosong
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText(null);
+            alert.setContentText("Input angka sebelum input operator.");
+            alert.showAndWait();
+            return;
+        }
+
         if (!value.equals("Ans")) {
             if (!operator.isEmpty())
                 return;
@@ -133,7 +144,7 @@ public class HelloController implements Initializable {
 
             if (operator.equals("/") && num2 == 0) {
                 // Peringatan pembagian oleh nol
-                result.setText("Divison by zero");
+                result.setText("Division by zero");
                 return;
             }
 
@@ -142,7 +153,7 @@ public class HelloController implements Initializable {
             result.setText(String.valueOf(total));
 
             // Tambahkan hasil ke dalam history
-            String expression = num1 + " " + operator + " " + num2 + " = " + total;
+            String expression = prevnum.getText() + " " + operator + " " + num2 + " = " + total;
             history.add(expression);
 
             operator = "";
