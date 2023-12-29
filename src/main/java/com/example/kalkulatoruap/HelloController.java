@@ -153,7 +153,7 @@ public class HelloController implements Initializable {
             result.setText(String.valueOf(total));
 
             // Tambahkan hasil ke dalam history
-            String expression = prevnum.getText() + " " + operator + " " + num2 + " = " + total;
+            String expression = num1 + " " + operator + " " + num2 + " = " + total;
             history.add(expression);
 
             operator = "";
